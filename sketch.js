@@ -12,7 +12,6 @@ function preload() {
 
   //--Loading my external material
   magicBall = loadImage("assets/magicBall.png");
-
 }
 
 
@@ -25,7 +24,6 @@ function setup() {
 
   //--Setting a "sensible" sensor
   setShakeThreshold(20);
-
 }
 
 
@@ -69,7 +67,6 @@ function draw() {
   drawingContext.textAlign = "center";
   fill('skyBlue');
   text(randomword, width / 2, (height / 2) + 110);
-
 }
 
 
