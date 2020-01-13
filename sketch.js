@@ -23,7 +23,7 @@ function setup() {
   colorMode(HSB);
 
   //--Changing my background
-  c = color(map(rotationZ, -180, 180, 1, width, 0, 360), 75, 100);
+  c = color(map(rotationZ, -180, 180, 1, height, 0, 360), 75, 100);
   background(c);
   push();
   noFill();
