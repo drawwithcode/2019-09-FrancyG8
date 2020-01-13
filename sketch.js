@@ -30,7 +30,7 @@ function setup() {
 function draw() {
 
   //--Changing my background
-  c = color(map(rotationX, -180, 180, 1, width, 0, 360), 75, 100);
+  c = color(map(rotationY, -180, 180, 1, width, 0, 360), 75, 100);
   background(c);
   push();
   noFill();
