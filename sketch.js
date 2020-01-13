@@ -22,6 +22,13 @@ function setup() {
   frameRate(12);
   colorMode(HSB);
 
+  //--Setting a "sensible" sensor
+  setShakeThreshold(20);
+}
+
+
+function draw() {
+
   //--Changing my background
   c = color(map(rotationX, -180, 180, 1, width, 0, 360), 75, 100);
   background(c);
@@ -41,13 +48,6 @@ function setup() {
   fill('Khaki');
   text(myText, windowWidth / 6, windowHeight - 60);
   pop();
-
-  //--Setting a "sensible" sensor
-  setShakeThreshold(20);
-}
-
-
-function draw() {
 
   image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
   image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
