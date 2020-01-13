@@ -30,7 +30,7 @@ function setup() {
 function draw() {
 
   //--Changing my background
-  crazyBack = color(map(rotationX, 0, 360, 1, width, 0, 360), 75, 100);
+  crazyBack = color(map(rotationX, -360, 360, 1, width, 0, 360), 75, 100);
   background(crazyBack);
 
   push();
