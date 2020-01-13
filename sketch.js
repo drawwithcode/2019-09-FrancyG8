@@ -1,17 +1,16 @@
-/* --This is your new ~Magic Ball~
-let it answer yor deepest doubt-- */
+/* --Too many magic balls...Time for a toast!-- */
 
 //--Setting my variables
 var value = 0;
-var magicBall;
-var answers = ["Yes, baby", "Hell no", "OMG YES", "Nah man", "Could be", "Go for it", "Sashay away"];
-var randomword;
+var bottle;
+var cork;
 
 
 function preload() {
 
   //--Loading my external material
-  magicBall = loadImage("assets/magicBall.png");
+  bottle = loadImage("assets/bottle.png"); //483x927px
+  cork = loadImage("assets/cork.png"); //172x232px
 }
 
 
@@ -19,60 +18,73 @@ function setup() {
 
   //--Setting my canvas
   createCanvas(windowWidth, windowHeight);
-  background("indigo");
   angleMode(DEGREES);
+  frameRate(12);
+  colorMode(HSB);
+
+  // c = color(map(rotationY,-90,90,1,width, 0, 360), 75, 100);
+	// background(c);
+  //
+  // push();
+  // noFill();
+  // strokeWeight(40);
+  // stroke('Khaki');
+  // rect(0, 0, windowWidth, windowHeight);
+  // pop();
 
   //--Setting a "sensible" sensor
   setShakeThreshold(20);
+
+  // //--Instructions
+  // push();
+  // var myText = "Shake to Saber";
+  // textSize(30);
+  // textStyle(BOLD);
+  // textAlign(CENTER);
+  // fill('Khaki');
+  // text(myText, windowWidth / 6, windowHeight - 60);
+  // pop();
 }
 
 
 function draw() {
 
-  //--Putting my ball in the canvas
-  image(magicBall, (width / 2) - 500, (height / 2) - 400, 1000, 1000);
+  c = color(map(rotationY,-90,90,1,width, 0, 360), 75, 100);
+	background(c);
 
-  //--Setting my presentation text
+  //--Instructions
   push();
-  var myText = "Let the";
-  drawingContext.font = "60px Roboto Mono";
-  drawingContext.textAlign = "center";
-  fill('white');
-  text(myText, width / 2, 100);
-  pop();
-  push();
-  var myText2 = "~ MAGIC BALL ~";
-  drawingContext.font = "80px Roboto Mono";
-  drawingContext.textAlign = "center";
-  fill('skyBlue');
-  text(myText2, width / 2, 190);
-  pop();
-  push();
-  var myText3 = "give you the answer";
-  drawingContext.font = "60px Roboto Mono";
-  drawingContext.textAlign = "center";
-  fill('white');
-  text(myText3, width / 2, 260);
-  pop();
-  push();
-  var myText4 = "shake it like a polaroid picture";
-  drawingContext.font = "30px Roboto Mono";
-  drawingContext.textAlign = "center";
-  fill('white');
-  text(myText4, width / 2, height - 50);
+  var myText = "Shake to Saber";
+  textSize(30);
+  textStyle(BOLD);
+  textAlign(CENTER);
+  fill('Khaki');
+  text(myText, windowWidth / 6, windowHeight - 60);
   pop();
 
-  //--This will be your answer
-  drawingContext.font = "60px Roboto Mono";
-  drawingContext.textAlign = "center";
-  fill('skyBlue');
-  text(randomword, width / 2, (height / 2) + 110);
+  push();
+  noFill();
+  strokeWeight(40);
+  stroke('Khaki');
+  rect(0, 0, windowWidth, windowHeight);
+  pop();
+
+  image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
+  image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+
+}
+
+function corkPop() {
+
 }
 
 
-//--Every time we shake the device, an answer is given
+//--After shaking the phone, the cork will move
 function deviceShaken() {
-  randomword = random(answers);
+  value = value + 10;
+	if (value > windowHeight) {
+		value = 0;
+  }
 }
 
 
@@ -83,6 +95,6 @@ function touchMoved() {
 
 
 //--Here a permission is asked to the user
-function touchEnded() {
-  DeviceOrientationEvent.requestPermission()
+function touchEnded(event) {
+  DeviceOrientationEvent.requestPermission();
 }
