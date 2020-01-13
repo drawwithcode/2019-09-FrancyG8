@@ -30,8 +30,9 @@ function setup() {
 function draw() {
 
   //--Changing my background
-  c = color(map(rotationY, -180, 180, 1, width, 0, 360), 75, 100);
-  background(c);
+  crazyBack = color(map(rotationY, -180, 180, 1, width, 0, 360), 75, 100);
+  background(crazyBack);
+
   push();
   noFill();
   strokeWeight(40);
