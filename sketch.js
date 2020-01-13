@@ -49,7 +49,7 @@ function setup() {
 
 function draw() {
 
-  c = color(map(rotationY,-90,90,1,width, 0, 360), 75, 100);
+  c = color(map(rotationX, -180, 180, 1, width, 0, 360), 75, 100);
 	background(c);
 
   //--Instructions
