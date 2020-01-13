@@ -22,35 +22,15 @@ function setup() {
   frameRate(12);
   colorMode(HSB);
 
-  // c = color(map(rotationY,-90,90,1,width, 0, 360), 75, 100);
-	// background(c);
-  //
-  // push();
-  // noFill();
-  // strokeWeight(40);
-  // stroke('Khaki');
-  // rect(0, 0, windowWidth, windowHeight);
-  // pop();
-
-  //--Setting a "sensible" sensor
-  setShakeThreshold(20);
-
-  // //--Instructions
-  // push();
-  // var myText = "Shake to Saber";
-  // textSize(30);
-  // textStyle(BOLD);
-  // textAlign(CENTER);
-  // fill('Khaki');
-  // text(myText, windowWidth / 6, windowHeight - 60);
-  // pop();
-}
-
-
-function draw() {
-
+  //--Changing my background
   c = color(map(rotationX, -180, 180, 1, width, 0, 360), 75, 100);
-	background(c);
+  background(c);
+  push();
+  noFill();
+  strokeWeight(40);
+  stroke('Khaki');
+  rect(0, 0, windowWidth, windowHeight);
+  pop();
 
   //--Instructions
   push();
@@ -62,12 +42,12 @@ function draw() {
   text(myText, windowWidth / 6, windowHeight - 60);
   pop();
 
-  push();
-  noFill();
-  strokeWeight(40);
-  stroke('Khaki');
-  rect(0, 0, windowWidth, windowHeight);
-  pop();
+  //--Setting a "sensible" sensor
+  setShakeThreshold(20);
+}
+
+
+function draw() {
 
   image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
   image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
