@@ -28,68 +28,92 @@ function setup() {
 
 
 function draw() {
+  //
+  // //--Background
+  // crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
+  // background(crazyBack);
+  //
+  // //--Window border
+  // push();
+  // noFill();
+  // strokeWeight(40);
+  // stroke('Khaki');
+  // rect(0, 0, windowWidth, windowHeight);
+  // pop();
+  //
+  // //--Instructions
+  // push();
+  // var myText = "Shake to Saber";
+  // textSize(30);
+  // textStyle(BOLD);
+  // textAlign(CENTER);
+  // fill('Khaki');
+  // text(myText, windowWidth / 6, windowHeight - 60);
+  // pop();
+  //
+  // // image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
+  // image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
 
-  //--Background
-  crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
-  background(crazyBack);
+  if (value === 0) {
+    //--Background
+    crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
+    background(crazyBack);
 
-  //--Window border
-  push();
-  noFill();
-  strokeWeight(40);
-  stroke('Khaki');
-  rect(0, 0, windowWidth, windowHeight);
-  pop();
+    //--Window border
+    push();
+    noFill();
+    strokeWeight(40);
+    stroke('Khaki');
+    rect(0, 0, windowWidth, windowHeight);
+    pop();
 
-  //--Instructions
-  push();
-  var myText = "Shake to Saber";
-  textSize(30);
-  textStyle(BOLD);
-  textAlign(CENTER);
-  fill('Khaki');
-  text(myText, windowWidth / 6, windowHeight - 60);
-  pop();
+    //--Instructions
+    push();
+    var myText = "Shake to Saber";
+    textSize(30);
+    textStyle(BOLD);
+    textAlign(CENTER);
+    fill('Khaki');
+    text(myText, windowWidth / 6, windowHeight - 60);
+    pop();
 
-  // image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
-  image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+    image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
+    image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+
+  } else if (value === 1) {
+    //--Background
+    crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
+    background(crazyBack);
+
+    //--Window border
+    push();
+    noFill();
+    strokeWeight(40);
+    stroke('Khaki');
+    rect(0, 0, windowWidth, windowHeight);
+    pop();
+
+    //--Instructions
+    push();
+    var myText = "HAPPY NEW YEAR!";
+    textSize(50);
+    textStyle(BOLD);
+    textAlign(CENTER);
+    fill('Khaki');
+    text(myText, windowWidth / 2, 40);
+    pop();
+
+    image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
+    image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+  }
 
 }
 
-function CorkPop(_x, _y) {
-    this.x = _x;
-    this.y = _y;
-    this.speed = 2;
-    //this is a method equal to a function
-
-   this.move = function() {
-    this.x += xIncrease * this.speed;
-    this.y += yIncrease * this.speed;
-
-    //vertical bouncing
-    if(this.y > windowHeight || this.y < 0) {
-      yIncrease = -yIncrease; //inverte la direzione quando tocca la fine
-    }
-
-    //horizontal bouncing
-    if(this.x > windowWidth || this.x < 0) {
-      xIncrease = -xIncrease;
-    }
-  }
-
-  //display method
-  this.display = function() {
-    image(cork, this.x,this.y);
-  }
-}
 
 
 //--After shaking the phone, the cork will move
 function deviceShaken() {
-  value = value + 10;
-	if (value > windowHeight) {
-		value = 0;
-  }
+  value = 1;
 }
 
 
