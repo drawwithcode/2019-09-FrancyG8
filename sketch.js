@@ -88,6 +88,7 @@ function draw() {
   }
 }
 
+//--My cork
 function Cork(_x, _y, cork) {
   this.x = _x;
   this.y = _y;
