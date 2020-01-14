@@ -95,12 +95,12 @@ function draw() {
 
     //--Instructions
     push();
-    var myText = "HAPPY NEW YEAR!";
-    textSize(50);
+    var myText = "HAPPY\nNEW YEAR\n2020!";
+    textSize(100);
     textStyle(BOLD);
     textAlign(CENTER);
     fill('Khaki');
-    text(myText, windowWidth / 2, 40);
+    text(myText, windowWidth / 2, 100);
     pop();
 
     image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
