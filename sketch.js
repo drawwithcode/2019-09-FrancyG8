@@ -103,8 +103,17 @@ function draw() {
     text(myText, windowWidth / 2, 100);
     pop();
 
-    image(cork, windowWidth / 2 - 85, windowHeight / 2 - 116);
     image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+
+    image(cork, r * 2, r * 2);
+    x += xspeed;
+    y += yspeed;
+    if (x > width - r || x < r) {
+      xspeed = -xspeed;
+    }
+    if (y > height - r || y < r) {
+      yspeed = -yspeed;
+    }
   }
 
 }
