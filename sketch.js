@@ -40,12 +40,12 @@ function draw() {
 
     //--Instructions
     push();
-    var myText = "Shake to Saber";
+    var myText = "Shake to saber\nFlip to change color";
     textSize(30);
     textStyle(BOLD);
-    textAlign(CENTER);
+    textAlign(LEFT);
     fill('Khaki');
-    text(myText, windowWidth / 6, windowHeight - 60);
+    text(myText, 30, windowHeight - 60);
     pop();
 
     //--Cork
@@ -78,12 +78,12 @@ function draw() {
 
     //--Greetings
     push();
-    var myText = "HAPPY\nNEW YEAR\n2020!";
+    var myText3 = "HAPPY\nNEW YEAR\n2020!";
     textSize(130);
     textStyle(BOLD);
     textAlign(CENTER);
     fill('Khaki');
-    text(myText, windowWidth / 2, windowHeight / 5);
+    text(myText3, windowWidth / 2, windowHeight / 5);
     pop();
 
     //--Bottle
