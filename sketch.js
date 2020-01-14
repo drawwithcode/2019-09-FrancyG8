@@ -17,7 +17,7 @@ function preload() {
 function setup() {
 
   //--Setting my canvas
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   angleMode(DEGREES);
   frameRate(12);
   colorMode(HSB);
