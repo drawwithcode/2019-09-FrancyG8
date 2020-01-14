@@ -24,8 +24,9 @@ function setup() {
   colorMode(HSB);
 
   //--Setting a "sensible" sensor
-  setShakeThreshold(10);
+  setShakeThreshold(20);
 
+  //--Setting my cork
   myCork = new Cork(windowWidth / 2 - 85, windowHeight / 2 - 116, cork);
 }
 
@@ -118,7 +119,7 @@ function Cork(_x, _y, cork) {
 }
 
 
-//--After shaking the phone, the cork will move
+//--After shaking the phone, the party starts
 function deviceShaken() {
   value = 1;
 }
