@@ -33,6 +33,8 @@ function draw() {
   crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
   background(crazyBack);
 
+  translate(-windowWidth/2, - windowHeight/2);
+
   //--Window border
   push();
   noFill();
