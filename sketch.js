@@ -119,9 +119,7 @@ function draw() {
       yspeed = -yspeed;
     }
   }
-
 }
-
 
 
 //--After shaking the phone, the cork will move
