@@ -17,7 +17,7 @@ function preload() {
 function setup() {
 
   //--Setting my canvas
-  createCanvas(windowWidth, windowHeight, WEBGL);
+  createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
   frameRate(12);
   colorMode(HSB);
@@ -32,8 +32,6 @@ function draw() {
   //--Background
   crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
   background(crazyBack);
-
-  translate(-windowWidth/2, - windowHeight/2);
 
   //--Window border
   push();
