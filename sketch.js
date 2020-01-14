@@ -87,7 +87,7 @@ function draw() {
     pop();
 
     //--Bottle
-    image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+    image(bottle, (windowWidth / 2) - 241.5 + random(-5, 5), (windowHeight / 2) + random(-5, 5));
 
     //--Window border
     push();
@@ -99,7 +99,7 @@ function draw() {
   }
 }
 
-//--My cork
+//--My cork (I was trying to make it move)
 function Cork(_x, _y, cork) {
   this.x = _x;
   this.y = _y;
