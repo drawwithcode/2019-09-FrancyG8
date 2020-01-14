@@ -4,10 +4,12 @@
 var value = 0;
 var bottle;
 var cork;
+
 let x = windowWidth / 2 - 85;
 let y = windowHeight / 2 - 116;
 let xspeed = 5;
 let yspeed = 2;
+let r = 232;
 
 
 function preload() {
@@ -59,6 +61,7 @@ function draw() {
   // image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
 
   if (value === 0) {
+
     //--Background
     crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
     background(crazyBack);
@@ -85,17 +88,6 @@ function draw() {
     image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
 
   } else if (value === 1) {
-    //--Background
-    crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
-    background(crazyBack);
-
-    //--Window border
-    push();
-    noFill();
-    strokeWeight(40);
-    stroke('Khaki');
-    rect(0, 0, windowWidth, windowHeight);
-    pop();
 
     //--Instructions
     push();
@@ -104,12 +96,12 @@ function draw() {
     textStyle(BOLD);
     textAlign(CENTER);
     fill('Khaki');
-    text(myText, windowWidth / 2, 100);
+    text(myText, windowWidth / 2, windowHeight / 5);
     pop();
 
     image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
 
-    image(cork, r * 2, r * 2);
+    image(cork, x, y);
     x += xspeed;
     y += yspeed;
     if (x > width - r || x < r) {
