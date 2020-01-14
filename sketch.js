@@ -24,7 +24,7 @@ function setup() {
   colorMode(HSB);
 
   //--Setting a "sensible" sensor
-  setShakeThreshold(20);
+  setShakeThreshold(10);
 
   myCork = new Cork(windowWidth / 2 - 85, windowHeight / 2 - 116, cork);
 }
@@ -40,12 +40,12 @@ function draw() {
 
     //--Instructions
     push();
-    var myText = "Shake to saber\nFlip to change color";
+    var myText = "Flip to change color\nShake to saber";
     textSize(30);
     textStyle(BOLD);
     textAlign(LEFT);
     fill('Khaki');
-    text(myText, 30, windowHeight - 60);
+    text(myText, 40, windowHeight - 80);
     pop();
 
     //--Cork
