@@ -4,6 +4,7 @@
 var value = 0;
 var bottle;
 var cork;
+var colorList = ['OrangeRed', 'Gold', 'White', 'LightCyan', 'DodgerBlue'];
 
 
 function preload() {
@@ -19,7 +20,7 @@ function setup() {
   //--Setting my canvas
   createCanvas(windowWidth, windowHeight);
   angleMode(DEGREES);
-  frameRate(12);
+  frameRate(80);
   colorMode(HSB);
 
   //--Setting a "sensible" sensor
@@ -37,14 +38,6 @@ function draw() {
     crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
     background(crazyBack);
 
-    //--Window border
-    push();
-    noFill();
-    strokeWeight(40);
-    stroke('Khaki');
-    rect(0, 0, windowWidth, windowHeight);
-    pop();
-
     //--Instructions
     push();
     var myText = "Shake to Saber";
@@ -60,11 +53,6 @@ function draw() {
     //--Bottle
     image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
 
-  } else if (value == 1) {
-
-    //--Background
-    background("black");
-
     //--Window border
     push();
     noFill();
@@ -73,10 +61,25 @@ function draw() {
     rect(0, 0, windowWidth, windowHeight);
     pop();
 
+  } else if (value == 1) {
+
+    //--Background
+    background("black");
+
+    //--Sparcle
+    var index = floor(random() * colorList.length);
+    var colorHex = colorList[index];
+    fill(color(colorHex));
+    noStroke();
+    var s = random() * width;
+    var t = random() * height;
+    var v = random() * 100;
+    circle(s, t, v);
+
     //--Greetings
     push();
     var myText = "HAPPY\nNEW YEAR\n2020!";
-    textSize(100);
+    textSize(130);
     textStyle(BOLD);
     textAlign(CENTER);
     fill('Khaki');
@@ -85,6 +88,14 @@ function draw() {
 
     //--Bottle
     image(bottle, windowWidth / 2 - 241.5, windowHeight / 2);
+
+    //--Window border
+    push();
+    noFill();
+    strokeWeight(40);
+    stroke('Khaki');
+    rect(0, 0, windowWidth, windowHeight);
+    pop();
   }
 }
 
