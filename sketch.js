@@ -4,6 +4,10 @@
 var value = 0;
 var bottle;
 var cork;
+let x = windowWidth / 2 - 85;
+let y = windowHeight / 2 - 116;
+let xspeed = 5;
+let yspeed = 2;
 
 
 function preload() {
