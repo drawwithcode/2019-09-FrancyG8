@@ -29,10 +29,11 @@ function setup() {
 
 function draw() {
 
-  //--Changing my background
-  crazyBack = color(map(rotationY, -180, 180, 1, width, 0, 360), 100, 255);
+  //--Background
+  crazyBack = color(map(rotationY, -90, 90, 1, width, 0, 360), 75, 100);
   background(crazyBack);
 
+  //--Window border
   push();
   noFill();
   strokeWeight(40);
